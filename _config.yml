@@ -4,7 +4,7 @@ email:       hack@itemize.no
 author:      Itemize
 description: "Itemize CTF-lag ved Norges Teknisk-Naturvitenskapelige universitet."
 baseurl:     ""
-url:         "http://test.itemize.no"
+url:         "http://itemize.no"
 date_format: "%-d %b, %Y"
 
 # Google services

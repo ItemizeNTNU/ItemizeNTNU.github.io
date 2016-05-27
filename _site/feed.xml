@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Itemize</title>
+    <description>Itemize CTF-lag ved Norges Teknisk-Naturvitenskapelige universitet.</description>
+    <link>http://itemize.no/</link>
+    <atom:link href="http://itemize.no/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Hello World</title>
+        <description>&lt;p&gt;Test test test
+hello world&lt;/p&gt;
+
+&lt;p&gt;woop woop&lt;/p&gt;
+
+&lt;p&gt;saddsads
+dasdadsdsaadsdsadsa&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 26 May 2016 14:09:00 +0200</pubDate>
+        <link>http://itemize.no/post/2016/05/26/Hello-world/</link>
+        <guid isPermaLink="true">http://itemize.no/post/2016/05/26/Hello-world/</guid>
+      </item>
+    
+  </channel>
+</rss>

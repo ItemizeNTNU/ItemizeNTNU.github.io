@@ -14,8 +14,17 @@ Capture-the-flag (CTF) konkurranser er et slags cyberspace wargame som går ut p
 
 Itemize legger til rette for å lære praktisk informasjonssikkerhet på en ustrukturert og morsom måte der vi lærer av hverandre og ved å delta i internasjonale hacker-konkurranser.
 
-https://ctftime.org/team/11404
+<a href="https://ctftime.org/team/11404">Itemize on CTFTime</a>
 
 
-Insert engelsk versjon
+In English:
 
+Itemize hackerclub was started in October 2014 at the initiative of prof. Mjølsnes at the Institue for Telematics at NTNU.
+
+The main goal from the beginning was to attend and attain a respectable position in international Capture-the-flag competitions.
+
+Capture-the-flag (abbv CTF) is a sort of cyber-wargame with the main goal being to solve tasks within different categories to obtain "flags" (bitstrings) which can be turned in in exchange for points. The goal is to get as many points as possible. The tasks are often in categories such as cryptography, web-hacking, binary analasys and exploitation, forensics etc.
+
+Itemize is thus a platform for students and faculty to learn about information and network security in a practical and fun manner, learning by doing and competing as well as learning from each other.
+
+<a href="https://ctftime.org/team/11404">Itemize on CTFTime</a>

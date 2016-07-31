@@ -1,0 +1,93 @@
+# Defensive 100 TMCTF 2016 Online Qualifier
+
+> Decode me!
+
+>Decodeme_decodeme.php
+
+After decrypting the code we are met with the following php-script (edited for readability)
+```php
+<?php
+$GLOBALS['key'] = "6c7f4d49729e58d7a458999b570e0151bc034ca7";
+$func="create_function";
+$decodeme=$func('$x','eval("?>".gzinflate(base64_decode($x)));');
+$decodeme("bigstring")
+?>
+```
+(Sidenote: bigstring is a large string - a way to obfuscate the php script.)
+Running the script presents us with the following page:
+
+![bilde1](https://github.com/ItemizeNTNU.github.io/images/bilde1.PNG)
+
+Echo the bigstring decoded:
+```php
+<?php
+$bigstring = "bigstring";
+echo gzinflate(base64_decode($bigstring));
+```
+
+We get a full webpage including base64-encoded images, and a simple webshell. Including a reference to https://github.com/b374k/b374k.
+
+The interesting part however is this:
+
+```php
+function chk_password(){
+    if(!isset($GLOBALS['key'])){ die(); }
+    if(trim($GLOBALS['key'])==''){ die(); }
+    $glob = $GLOBALS['key'];
+
+    $post = '';
+    $cook = '';
+    if (isset($_POST['key'])) { $post = $_POST['key']; }
+    if (isset($_COOKIE['key'])) { $cook = $_COOKIE['key']; }
+    if ($cook==$glob) { return; }
+
+    if($post != ''){
+	    $key = sha1(md5($post));
+        if($key==$glob){
+		    setcookie("key", $key, time()+36000, "/");
+            $qstr = (isset($_SERVER["QUERY_STRING"])&&(!empty($_SERVER["QUERY_STRING"])))?"?".$_SERVER["QUERY_STRING"]:"";
+		    header("Location: ".htmlspecialchars($_SERVER["REQUEST_URI"].$qstr, 2 | 1));
+        	$cook = $_COOKIE['key'];
+	    }
+    }
+```
+
+Which basically checks if sha1(md5(input in key field)) is equal to the key-variable, and if it is authenticates the user and shows the webshell "interface". To see this I simply changed the key-variable to a sha1-hash of a md5-hash of a string I knew.
+
+After finding no hint as to what the flag was, I decided to look at the images, which you could easily do if you edited the php-script setting a $_REQUEST['cmd'] variable to certain strings. List of the commands:
+
+> [showcontact, showsupport, showlock, buylicense, whoauthor, getversion]
+
+The images themselves didn't show anything of note. Although the EXIF-data of the lock-image had an interesting Camera-model name.
+
+```php
+eval(base64_decode("ZWNobyAnZmxhZyBpcyBzaGExKHBhc3N3b3JkKSc7"));
+```
+
+Which evaluates to:
+
+```php
+flag is sha1(password)
+```
+
+Finding the flag was then pretty simple. The initial page showed the text "enter ****" leading me to believe that the password was 4 characters long. The password was then found by a simple python script (because fuck php)
+
+```python
+from hashlib import md5, sha1
+import random
+import string
+key = "6c7f4d49729e58d7a458999b570e0151bc034ca7"
+
+alphabet = "abcdefghijklmnopqrstuvwxyz1234567890"
+while True:
+    candidate = ''.join(random.choice(alphabet) for _ in range(4))
+
+    if sha1(md5(candidate).hexdigest()).hexdigest() == key:
+        print "[*] PASSORD IS:  {}".format(candidate)
+        break
+        
+        
+# Output: [*] PASSORD IS:  h4ck
+```
+
+Flag: TMCTF{e17e98788d6b4ac922b2df100ef9398ae0f229ad}

@@ -2,7 +2,7 @@
 layout: post
 title: IceCTF: Contract - cracking insecure ECDSA
 date: 2016-08-26 17:25:00 +0200
-summary: Short writeup of the contract task in IceCTF 2016
+summary:
 ---
 
 

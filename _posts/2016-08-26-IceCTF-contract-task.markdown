@@ -24,7 +24,8 @@ Here is the relevant info from the pcaps:
 
 And here is the public key:
 
-```-----BEGIN PUBLIC KEY-----
+```bash
+-----BEGIN PUBLIC KEY-----
 MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEgTxPtDMGS8oOT3h6fLvYyUGq/BWeKiCB
 sQPyD0+2vybIT/Xdl6hOqQd74zr4U2dkj+2q6+vwQ4DCB1X7HsFZ5JczfkO7HCdY
 I7sGDvd9eUias/xPdSIL3gMbs26b0Ww0
@@ -34,7 +35,8 @@ I7sGDvd9eUias/xPdSIL3gMbs26b0Ww0
 
 Decoding the public key using OpenSSL:
 
-```root@kali:~/icectf/contract# openssl asn1parse -in pub
+```bash
+root@kali:~/icectf/contract# openssl asn1parse -in pub
     0:d=0  hl=2 l= 118 cons: SEQUENCE          
     2:d=1  hl=2 l=  16 cons: SEQUENCE          
     4:d=2  hl=2 l=   7 prim: OBJECT            :id-ecPublicKey

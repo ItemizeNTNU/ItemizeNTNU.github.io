@@ -91,12 +91,14 @@ def recover_key(c1,sig1,c2,sig2,pubkey):
 
 Giving us the private key:
 
-```-----BEGIN EC PRIVATE KEY-----
+```bash
+-----BEGIN EC PRIVATE KEY-----
 MIGkAgEBBDD+qZQfEucEMokaAWn0wrTsPz3nMwIlBasVdyQpi/zT3X7UdF7WDD23
 EChyxQOSWMigBwYFK4EEACKhZANiAASBPE+0MwZLyg5PeHp8u9jJQar8FZ4qIIGx
 A/IPT7a/JshP9d2XqE6pB3vjOvhTZ2SP7arr6/BDgMIHVfsewVnklzN+Q7scJ1gj
 uwYO9315SJqz/E91IgveAxuzbpvRbDQ=
------END EC PRIVATE KEY-----```
+-----END EC PRIVATE KEY-----
+```
 
 which in turns allows for us to send in the command read flag.txt with a valid signature.
 

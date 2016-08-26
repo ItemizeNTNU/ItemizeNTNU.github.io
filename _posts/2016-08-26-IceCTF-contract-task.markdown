@@ -29,7 +29,7 @@ MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEgTxPtDMGS8oOT3h6fLvYyUGq/BWeKiCB
 sQPyD0+2vybIT/Xdl6hOqQd74zr4U2dkj+2q6+vwQ4DCB1X7HsFZ5JczfkO7HCdY
 I7sGDvd9eUias/xPdSIL3gMbs26b0Ww0
 -----END PUBLIC KEY-----
-```
+
 
 Decoding the public key using OpenSSL:
 
@@ -39,7 +39,7 @@ Decoding the public key using OpenSSL:
     4:d=2  hl=2 l=   7 prim: OBJECT            :id-ecPublicKey
    13:d=2  hl=2 l=   5 prim: OBJECT            :secp384r1
    20:d=1  hl=2 l=  98 prim: BIT STRING
-```
+   
 
 The important information to see here is the secp384r1-string.
 

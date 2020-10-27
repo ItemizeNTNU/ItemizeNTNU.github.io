@@ -1,4 +1,7 @@
-#README
+# Vi har fått ny nettside, se [ItemizeNTNU/website](https://github.com/ItemizeNTNU/website).
+**Dette repoet er arktivert og kun tilgjengelig for historiske årsaker.** 
+
+### README
 
 Vi bruker [Pixyll](http://www.pixyll.com) og [Jekyll](https://jekyllrb.com/)
 
